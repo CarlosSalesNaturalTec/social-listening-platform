@@ -1,0 +1,4 @@
+backend/
+/frontend/
+scraper_newspaper3k
+.env

@@ -1,0 +1,85 @@
+
+{
+  "projectName": "Plataforma de Social Listening Político",
+  "overallStatus": "Em Andamento",
+  "lastUpdated": "2025-08-24T18:05:00Z",
+  "currentFocus": "Módulo 'scraper_newspaper3k' concluído. Próximo passo é o módulo 'nlp'.",
+  "humanConfirmationRequired": {
+    "status": false,
+    "question": ""
+  },
+  "modules": {
+    "frontend_configuracao_inicial": {
+      "status": "Concluído",
+      "detailedStatus": "Etapa inicial de início de monitoramento já construída.",
+      "notes": "Código base disponível na pasta /frontend."
+    },
+    "search_google_cse": {
+      "status": "Concluído",
+      "detailedStatus": "Pesquisa de URLs relevantes e armazenamento no banco de dados.",
+      "notes": "Código base disponível na pasta /backend."
+    },
+    "scraper_newspaper3k": {
+      "status": "Concluído, aguardando testes e validação do usuário.",
+      "detailedStatus": "Código gerado para o novo micro-serviço de scraping.",
+      "notes": "Novo projeto criado na pasta /scraper_newspaper3k."
+    },
+    "nlp": {
+      "status": "Não Iniciado",
+      "detailedStatus": "",
+      "notes": "Novo projeto para análise de sentimento, extração de entidades e moderação."
+    },
+    "semantic_embeddings": {
+      "status": "Não Iniciado",
+      "detailedStatus": "",
+      "notes": "Novo módulo para criar embeddings de artigos e análises de NLP."
+    },
+    "frontend_dashboard_status": {
+      "status": "Não Iniciado",
+      "detailedStatus": "",
+      "notes": "Adicionar nova TAB de Status Geral do Monitoramento no frontend."
+    },
+    "analytics": {
+      "status": "Não Iniciado",
+      "detailedStatus": "",
+      "notes": "Dashboard com análises de social listening para marca e concorrentes."
+    },
+    "semantic_whatsapp_query": {
+      "status": "Não Iniciado",
+      "detailedStatus": "",
+      "notes": "Permitir consulta via WhatsApp utilizando busca semântica."
+    },
+    "agent_mode": {
+      "status": "Não Iniciado",
+      "detailedStatus": "",
+      "notes": "Alertas de crise e outros via WhatsApp."
+    },
+    "search_instagram": {
+      "status": "Não Iniciado",
+      "detailedStatus": "",
+      "notes": "Novo módulo para pesquisar e baixar conteúdo do Instagram."
+    },
+    "search_youtube": {
+      "status": "Não Iniciado",
+      "detailedStatus": "",
+      "notes": "Novo módulo para pesquisar e baixar conteúdo do YouTube."
+    }
+  },
+  "decisionLog": [
+    {
+      "timestamp": "2025-08-24T18:00:00Z",
+      "decision": "Criação do arquivo project_status.json com base no plano_de_acao.md.",
+      "author": "Gemini"
+    },
+    {
+      "timestamp": "2025-08-24T18:05:00Z",
+      "decision": "Aprovada a criação do módulo scraper_newspaper3k. Acesso ao Firestore será similar ao backend existente e uma lista de domínios confiáveis será gerada.",
+      "author": "Humano"
+    },
+    {
+      "timestamp": "2025-08-24T18:05:00Z",
+      "decision": "Módulo scraper_newspaper3k foi gerado com sucesso.",
+      "author": "Gemini"
+    }
+  ]
+}
