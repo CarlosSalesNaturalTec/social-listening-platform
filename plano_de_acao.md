@@ -52,7 +52,7 @@ Objetivo : Construir uma Plataforma de Social Listening capaz de realizar monito
       * - Status dados continuos: data-hora da última busca.
       * - Status dos agendamentos (search, Scraper, nlp).
     * - Erros: não processadas por scraper e não analisadas por NLP por motivo de erros.
-  * - Manter tab existente de Resumo e Logs / Dados.      
+  * - Manter tab existente de Requisições / Dados.      
   * - Manter tab existente de Coletas/Controles.
     * - Data inicio dados históricos. 
     * - Botões iniciar e parar coleta.
