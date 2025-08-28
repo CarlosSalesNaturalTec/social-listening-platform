@@ -20,13 +20,12 @@ Objetivo : Construir uma Plataforma de Social Listening capaz de realizar monito
   * - Mantenha inalterada a estrutura de pastas existente /frontend e /backend. Salvo necessidade justificada.
 
 * - **Scraper newspaper3k** 
-  * - Criar novo projeto em nova pasta, e disponibilizar no mesmo, um endpoind, para ser acionado via Cloud Scheduler.
-  * - Estabeler um filtro inicial para as urls: caso o seu dominio seja youtube, instagram ou facebook devem ser desconsideradas. As mesmas  possuirão scrapers específicos a serem desenvolvidos em etapa posterior. 
-  * - Caso passe do filtro anterior, analisar a relevância da url. Critérios para determinação de relevância: Presença do termo exato no title: peso 30. Presença do termo no snippet: peso 10. Domínio confiável ou autoridade alta: peso 25. URL amigável, sem muitos parâmetros: peso 5 . Título com múltiplos termos úteis: peso 10. Data da publicação (quando disponível): Peso 20. Ponto de corte = 0.60 . 
-  * - Para as urls que passarão da linha de corte por relevância, tentar realizar o scraping. 
-  * - Se conseguiu realizar o scraping salva resultado em banco de dados e define o respecivo status como scrapeada para evitar reprocessamento.
+  * - Etapa já construída. Disponível na pasta : /scraper_newspaper3k.
+  * - Estabelece um filtro inicial para as urls: caso o seu dominio seja youtube, instagram ou facebook devem ser desconsideradas. As mesmas  possuirão scrapers específicos a serem desenvolvidos em etapa posterior. 
+  * - Caso passe do filtro anterior, analisa a relevância da url. Critérios para determinação de relevância: Presença do termo exato no title: peso 30. Presença do termo no snippet: peso 10. Domínio confiável ou autoridade alta: peso 25. URL amigável, sem muitos parâmetros: peso 5 . Título com múltiplos termos úteis: peso 10. Data da publicação (quando disponível): Peso 20. Ponto de corte = 0.60. 
+  * - Para as urls que passarão da linha de corte por relevância, tenta realizar o scraping. 
+  * - Se conseguiu realizar o scraping salva resultado em banco de dados e define o respecivo status como scraper_ok para evitar reprocessamento.
   * - Se não conseguiu realizar o scraper registra esta informação no respectivo status inclusive registrando o motivo da não realização.
-  * - No arquivo Dockerfile do projeto, utilizar o CMD com uvicorn e o uso da porta 8000 .
 
 * - **NLP** 
   * - Etapa já construída. Disponível na pasta : /api_nlp.
