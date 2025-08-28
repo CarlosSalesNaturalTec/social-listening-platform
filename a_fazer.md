@@ -1,5 +1,3 @@
-# Scraper curso Arquitetura de sistemas com IA - Conteúdo programático 
-
 # Diversos
 * Sistema / Scraper : adicionar scraper_ok
 * Sistema / Scraper : Resumo de status com quantidades, ao clicar no status, listas os documentos
