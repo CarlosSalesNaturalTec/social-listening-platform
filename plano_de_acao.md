@@ -36,11 +36,7 @@ Objetivo : Construir uma Plataforma de Social Listening capaz de realizar monito
   * - Salvar análises em banco de dados e atualiza o respectivo status: nlp_ok ou nlp_erro.
 
 * - **ANALYTICS** 
-  * - Nova funcionalidade a ser implementada no módulo de FrontEnd.
-  * - Baseado em suas expertises, habilidades profisionais e nos dados disponíveis, sugerir features e métricas que agreguem valor estratégico a plataforma de social listening com enfoque político parlamentar. 
-  * - Relatórios e Dashboard.
-  * - As análises devem ser feitas para ambos: marca e concorrente.
-  * - Inicialmente a base de dados possui apenas dados obtidos pelo google_cse, porém receberá dados de outras fontes, como instagram, youtube, facebook, grupos do whatsapp, twitter, tik tok, kwaii e linkedin.
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc.md
       
 * - **SEARCH_INSTAGRAM** 
   * - Utilizar Instaloader ou similar.
