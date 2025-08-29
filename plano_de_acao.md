@@ -6,119 +6,74 @@ Objetivo : Construir uma Plataforma de Social Listening capaz de realizar monito
 
 * - **FRONTEND** 
   * - Etapa inicial de inicio de monitoramento já construída. Disponível na pasta: /frontend . 
-  * - Usuário Define os termos da busca (marca e concorrentes).
-  * - Define data histórica inicial para buscas históricas.
-  * - Inicia etapa de buscas.
-  * - Mantenha inalterada a estrutura de pastas existente /frontend e /backend. Salvo necessidade justificada.
+  * - Detalhes técnicos, instruções de uso e relação com os demais módulos estão descritas no arquivo README.md
+  * - Funcionalidades
+    * - Usuário Define os termos da busca (marca e concorrentes).
+    * - Define data histórica inicial para buscas históricas.
+    * - Inicia etapa de buscas: relevante e histórica.
 
 * - **SEARCH_GOOGLE_CSE** 
   * - Etapa já construída. Disponível na pasta : /backend .
-  * - Pesquisa urls mais relevantes no momento.
-  * - Pesquisa urls mais relevantes no período histórico definido. 
-  * - Salva urls em banco de dados indicando a fonte=google_cse.
-  * - Dispõe de endpoint que realiza pesquisa por urls novas (dateRestrict=d1). Este endpoint deve ser acionado diariamente via Cloud Schedule.
-  * - Mantenha inalterada a estrutura de pastas existente /frontend e /backend. Salvo necessidade justificada.
+  * - Detalhes técnicos, instruções de uso e relação com os demais módulos estão descritas no arquivo README.md
+  * - Funcionalidades
+    * - Endpoint acionado diariamente às 12:00hs e as 20:00hs via Cloud Schedule para buscas de dados contínuos.
+    * - Endpoint acionado diariamente às 21:00hs via Cloud Schedule para buscas de dados históricos.
+    * - Pesquisa urls mais relevantes no momento.
+    * - Pesquisa urls mais relevantes no período histórico definido. 
+    * - Salva urls em banco de dados indicando a fonte=google_cse.
+    * - Dispõe de endpoint que realiza pesquisa por urls novas (dateRestrict=d1). 
 
 * - **Scraper newspaper3k** 
   * - Etapa já construída. Disponível na pasta : /scraper_newspaper3k.
-  * - Estabelece um filtro inicial para as urls: caso o seu dominio seja youtube, instagram ou facebook devem ser desconsideradas. As mesmas  possuirão scrapers específicos a serem desenvolvidos em etapa posterior. 
-  * - Caso passe do filtro anterior, analisa a relevância da url. Critérios para determinação de relevância: Presença do termo exato no title: peso 30. Presença do termo no snippet: peso 10. Domínio confiável ou autoridade alta: peso 25. URL amigável, sem muitos parâmetros: peso 5 . Título com múltiplos termos úteis: peso 10. Data da publicação (quando disponível): Peso 20. Ponto de corte = 0.60. 
-  * - Para as urls que passarão da linha de corte por relevância, tenta realizar o scraping. 
-  * - Se conseguiu realizar o scraping salva resultado em banco de dados e define o respecivo status como scraper_ok para evitar reprocessamento.
-  * - Se não conseguiu realizar o scraper registra esta informação no respectivo status inclusive registrando o motivo da não realização.
-
+  * - Detalhes técnicos, instruções de uso e relação com os demais módulos estão descritas no arquivo README.md
+  * - Funcionalidades
+    * - Este módulo possui um Endpoint que deve ser acionado diariamente às 22:00hs via Cloud Schedule para realizar os respectivos scrapers.
+    * - Estabelece um filtro inicial para as urls: caso o seu dominio seja youtube, instagram ou facebook devem ser desconsideradas. As mesmas  possuirão scrapers específicos a serem desenvolvidos em etapa posterior. 
+    * - Caso passe do filtro anterior, analisa a relevância da url. Critérios para determinação de relevância: Presença do termo exato no title: peso 30. Presença do termo no snippet: peso 10. Domínio confiável ou autoridade alta: peso 25. URL amigável, sem muitos parâmetros: peso 5 . Título com múltiplos termos úteis: peso 10. Data da publicação (quando disponível): Peso 20. Ponto de corte = 0.60. 
+    * - Para as urls que passarão da linha de corte por relevância, tenta realizar o scraping. 
+    * - Se conseguiu realizar o scraping salva resultado em banco de dados e define o respecivo status como scraper_ok para evitar reprocessamento.
+    * - Se não conseguiu realizar o scraper registra esta informação no respectivo status inclusive registrando o motivo da não realização.
+    
 * - **NLP** 
   * - Etapa já construída. Disponível na pasta : /api_nlp.
-  * - para cada uma das urls scrapeadas na etapa anterior realiza:
-    * - Análise de sentimento.
-    * - Extração de entidades.
-    * - Moderação de conteúdo.
-  * - Salvar análises em banco de dados e atualiza o respectivo status: nlp_ok ou nlp_erro.
+  * - Detalhes técnicos, instruções de uso e relação com os demais módulos estão descritas no arquivo README.md
+  * - Funcionalidades
+    * - Este módulo possui um Endpoint que deve ser acionado diariamente às 23:00hs via Cloud Schedule para realizar as respectivos análises.
+    * - para cada uma das urls scrapeadas na etapa anterior realiza:
+      * - Análise de sentimento.
+      * - Extração de entidades.
+      * - Moderação de conteúdo.
+    * - Salvar análises em banco de dados e atualiza o respectivo status: nlp_ok ou nlp_erro.
 
 * - **ANALYTICS** 
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc.md
-      
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_analytics.md.
+        
 * - **SEARCH_INSTAGRAM** 
-  * - Utilizar Instaloader ou similar.
-  * - Criar neste novo módulo um endpoind, para ser acionado via Cloud Scheduler.
-  * - Pesquisa por hashtags.
-  * - Pesquisa em perfis específicos. 
-  * - Salva urls obtidas nas pesquisas em banco de dados indicando a origem=instagram.
-  * - baixar conteúdos (imagens, vídeos) e metadados.
-  * - Realizar OCR e/ou imagem descrição nas imagens (jpeg, png).
-  * - Transcrever vídeos.
-  * - Disponibilizar material em banco de dados para análise via módulo de NLP existente.
-
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_instagram.md
+  
 * - **SEARCH_YOUTUBE** 
-  * - Utilizar yt-dlp.
-  * - Criar neste novo módulo um endpoind, para ser acionado via Cloud Scheduler.
-  * - Pesquisa por hashtags ou termos de pesquisa.
-  * - Pesquisa em perfis específicos. 
-  * - Salva urls obtidas nas pesquisas em banco de dados indicando a origem=youtube.
-  * - baixar vídeos e metadados.
-  * - Transcrever vídeos.
-  * - Excluir vídeos transcritos.
-  * - Disponibilizar material em banco de dados para análise via módulo de NLP existente.
-
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_youtube.md
+  
 * - **SEARCH_FACEBOOK** 
-  * - Criar neste novo módulo um endpoind, para ser acionado via Cloud Scheduler.
-  * - Pesquisa por hashtags ou termos de pesquisa.
-  * - Pesquisa em perfis específicos. 
-  * - Salva urls obtidas nas pesquisas em banco de dados indicando a origem=facebook.
-  * - baixar vídeos e metadados.
-  * - Transcrever vídeos.
-  * - Excluir vídeos transcritos.
-  * - Disponibilizar material em banco de dados para análise via módulo de NLP existente.
-
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_facebook.md.
+  
 * - **WHATSAPP_GROUPS** 
-  * - Novo módulo capaz de realizar buscas em conversas exportadas de grupos de whatsapp
-  * - Ao encontrar menções aos termos especificados na plataforma, disponibilizar material em banco de dados para análise via módulo de NLP existente.
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_whatsapp.md
+ 
+* - **AGENT MODE**
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_agentMode.md 
+
+* - **SEMANTIC** 
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_semantic.md
 
 * - **SEARCH_TWITER** 
-  * - Criar neste novo módulo um endpoind, para ser acionado via Cloud Scheduler.
-  * - Pesquisa por hashtags.
-  * - Pesquisa em perfis específicos. 
-  * - Salva urls obtidas nas pesquisas em banco de dados indicando a origem=twitter.
-  * - baixar conteúdos (imagens, vídeos) e metadados.
-  * - Realizar OCR e/ou imagem descrição nas imagens (jpeg, png).
-  * - Transcrever vídeos.
-  * - Disponibilizar material em banco de dados para análise via módulo de NLP existente.
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_twitter.md
 
 * - **SEARCH_TIKTOK** 
-  * - Criar neste novo módulo um endpoind, para ser acionado via Cloud Scheduler.
-  * - Pesquisa por hashtags.
-  * - Pesquisa em perfis específicos. 
-  * - Salva urls obtidas nas pesquisas em banco de dados indicando a origem=tiktok.
-  * - baixar conteúdos (imagens, vídeos) e metadados.
-  * - Realizar OCR e/ou imagem descrição nas imagens (jpeg, png).
-  * - Transcrever vídeos.
-  * - Disponibilizar material em banco de dados para análise via módulo de NLP existente.
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_tiktok.md
 
 * - **SEARCH_KWAII** 
-  * - Criar neste novo módulo um endpoind, para ser acionado via Cloud Scheduler.
-  * - Pesquisa por hashtags.
-  * - Pesquisa em perfis específicos. 
-  * - Salva urls obtidas nas pesquisas em banco de dados indicando a origem=kwaii.
-  * - baixar conteúdos (imagens, vídeos) e metadados.
-  * - Realizar OCR e/ou imagem descrição nas imagens (jpeg, png).
-  * - Transcrever vídeos.
-  * - Disponibilizar material em banco de dados para análise via módulo de NLP existente.
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_kwaii.md
 
 * - **SEARCH_LINKEDIN** 
-  * - Criar neste novo módulo um endpoind, para ser acionado via Cloud Scheduler.
-  * - Pesquisa por hashtags.
-  * - Pesquisa em perfis específicos. 
-  * - Salva urls obtidas nas pesquisas em banco de dados indicando a origem=linkedin.
-  * - baixar conteúdos (imagens, vídeos) e metadados.
-  * - Realizar OCR e/ou imagem descrição nas imagens (jpeg, png).
-  * - Transcrever vídeos.
-  * - Disponibilizar material em banco de dados para análise via módulo de NLP existente.
-
-- **AGENT MODE**
-  * - Alertas de crise e outros via WhatsApp utilizando @open-wa/wa-automate.
- 
-- **SEMANTIC** 
-  * - Criar novo módulo, e disponiblizar no mesmo, um endpoind para ser acionado via Cloud Scheduler.
-  * - Ao ser acionado realizar o Embeddings dos artigos e suas respectivas análises de NLP. 
-  * - Armazenamento em Banco vetorial para posterior consultas vias chats.
-  * - Por meio do Whatsapp permitir consulta aos artigos e análises da plataforma utilizando técnicas de busca semântica. Utilizar @open-wa/wa-automate para acesso ao Whatsapp.
+  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_linkedin.md
