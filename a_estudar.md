@@ -1,12 +1,15 @@
 # Ferramentas para desenvolvimento de software com uso de IA:
 
-* Plano de Ação e outros arquivos contendo instruções: do que se deseja fazer, e como (markdown). 
-* Documentos de Contexto. Gerados com auxilio da IA através de prompt, e utilizadis como referência no plano de ação. Se necessário, um documento de contexto para cada módulo/funcionalidade da aplicação.
+* Plano de Ação e outros arquivos contendo instruções: do que se deseja fazer(markdown). 
+* Documentos de Contexto. Gerados com auxilio da IA através de prompt, e utilizadis como referência no plano de ação. Se necessário, um documento de contexto para cada módulo/funcionalidade da aplicação. Etapa anterior ao código.
 * Arquivos JSON auxiliares criados e atualizados pela IA ao longo do processo contendo: estado atual de desenvolvimento, decisões ao longo do processo, etc.
+* Arquivos Readme.md individuais para cada módulo/funcionalidade da aplicação. Contendo detalhes técnicos, instruções de operação e implementação, relação com os demais módulos do sistema. Gerados automaticamente por IA a cada conclusão de módulo. Documentação.
+
 
 ## Outros úteis
 * Fontes de Research - gerar pesquisa profunda sobre o tema e usar como referencia no projeto (markdown)
 * Arquitetura da aplicação - gerar através de prompt e utilizar no projeto (markdown)
+* Testes
 
 # Arquitetura de Soluções
 
