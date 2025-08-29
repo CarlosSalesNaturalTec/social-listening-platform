@@ -1,8 +1,8 @@
 {
   "projectName": "Plataforma de Social Listening Político",
   "overallStatus": "Em Andamento",
-  "lastUpdated": "2025-08-28T13:35:00Z",
-  "currentFocus": "Módulo de Analytics concluído. Preparando para iniciar o desenvolvimento do próximo módulo: 'search_instagram'.",
+  "lastUpdated": "2025-08-29T14:25:00Z",
+  "currentFocus": "Revertendo código para um commit anterior estável devido a erros introduzidos pela funcionalidade 'Feed de Ataques'. Aguardando a estabilização para refazer o processo.",
   "humanConfirmationRequired": {
     "status": false,
     "question": ""
@@ -93,6 +93,11 @@
     {
       "timestamp": "2025-08-28T13:35:00Z",
       "decision": "Usuário concluiu que a ausência de dados no 'Feed de Ataques' é devido ao baixo volume de dados. A lógica de depuração foi revertida e o módulo de Analytics foi marcado como concluído.",
+      "author": "Humano"
+    },   
+    {
+      "timestamp": "2025-08-29T14:25:00Z",
+      "decision": "Código revertido para um commit anterior mais estável devido a múltiplos erros introduzidos após a implementação da funcionalidade 'Feed de Ataques'.",
       "author": "Humano"
     }
   ]
