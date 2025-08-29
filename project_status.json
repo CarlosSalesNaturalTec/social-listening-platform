@@ -1,85 +1,99 @@
-
 {
   "projectName": "Plataforma de Social Listening Político",
   "overallStatus": "Em Andamento",
-  "lastUpdated": "2025-08-24T18:05:00Z",
-  "currentFocus": "Módulo 'scraper_newspaper3k' concluído. Próximo passo é o módulo 'nlp'.",
+  "lastUpdated": "2025-08-28T13:35:00Z",
+  "currentFocus": "Módulo de Analytics concluído. Preparando para iniciar o desenvolvimento do próximo módulo: 'search_instagram'.",
   "humanConfirmationRequired": {
     "status": false,
     "question": ""
   },
   "modules": {
-    "frontend_configuracao_inicial": {
+    "frontend": {
       "status": "Concluído",
-      "detailedStatus": "Etapa inicial de início de monitoramento já construída.",
-      "notes": "Código base disponível na pasta /frontend."
+      "detailedStatus": "Etapa inicial já construída conforme plano de ação.",
+      "notes": ""
     },
     "search_google_cse": {
       "status": "Concluído",
-      "detailedStatus": "Pesquisa de URLs relevantes e armazenamento no banco de dados.",
-      "notes": "Código base disponível na pasta /backend."
+      "detailedStatus": "Etapa inicial já construída conforme plano de ação.",
+      "notes": ""
     },
     "scraper_newspaper3k": {
-      "status": "Concluído, aguardando testes e validação do usuário.",
-      "detailedStatus": "Código gerado para o novo micro-serviço de scraping.",
-      "notes": "Novo projeto criado na pasta /scraper_newspaper3k."
+      "status": "Concluído",
+      "detailedStatus": "Etapa inicial já construída conforme plano de ação.",
+      "notes": ""
     },
     "nlp": {
-      "status": "Não Iniciado",
-      "detailedStatus": "",
-      "notes": "Novo projeto para análise de sentimento, extração de entidades e moderação."
-    },
-    "semantic_embeddings": {
-      "status": "Não Iniciado",
-      "detailedStatus": "",
-      "notes": "Novo módulo para criar embeddings de artigos e análises de NLP."
-    },
-    "frontend_dashboard_status": {
-      "status": "Não Iniciado",
-      "detailedStatus": "",
-      "notes": "Adicionar nova TAB de Status Geral do Monitoramento no frontend."
+      "status": "Concluído",
+      "detailedStatus": "Etapa inicial já construída conforme plano de ação.",
+      "notes": ""
     },
     "analytics": {
-      "status": "Não Iniciado",
-      "detailedStatus": "",
-      "notes": "Dashboard com análises de social listening para marca e concorrentes."
-    },
-    "semantic_whatsapp_query": {
-      "status": "Não Iniciado",
-      "detailedStatus": "",
-      "notes": "Permitir consulta via WhatsApp utilizando busca semântica."
-    },
-    "agent_mode": {
-      "status": "Não Iniciado",
-      "detailedStatus": "",
-      "notes": "Alertas de crise e outros via WhatsApp."
+      "status": "Concluído",
+      "detailedStatus": "Implementação dos dashboards e feeds finalizada. A lógica foi validada.",
+      "notes": "A ausência de dados no 'Feed de Ataques' é considerada normal devido ao baixo volume de dados monitorados até o momento. A funcionalidade deve operar como esperado quando dados relevantes estiverem presentes."
     },
     "search_instagram": {
       "status": "Não Iniciado",
-      "detailedStatus": "",
-      "notes": "Novo módulo para pesquisar e baixar conteúdo do Instagram."
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
     },
     "search_youtube": {
       "status": "Não Iniciado",
-      "detailedStatus": "",
-      "notes": "Novo módulo para pesquisar e baixar conteúdo do YouTube."
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
+    },
+    "search_facebook": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
+    },
+    "whatsapp_groups": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
+    },
+    "search_twitter": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
+    },
+    "search_tiktok": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
+    },
+    "search_kwaii": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
+    },
+    "search_linkedin": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
+    },
+    "agent_mode": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
+    },
+    "semantic": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
     }
   },
   "decisionLog": [
     {
-      "timestamp": "2025-08-24T18:00:00Z",
-      "decision": "Criação do arquivo project_status.json com base no plano_de_acao.md.",
-      "author": "Gemini"
-    },
-    {
-      "timestamp": "2025-08-24T18:05:00Z",
-      "decision": "Aprovada a criação do módulo scraper_newspaper3k. Acesso ao Firestore será similar ao backend existente e uma lista de domínios confiáveis será gerada.",
+      "timestamp": "2025-08-28T13:30:00Z",
+      "decision": "Aprovada a modificação temporária na lógica do 'Feed de Ataques' para depuração, alterando o operador de 'and' para 'or'.",
       "author": "Humano"
     },
     {
-      "timestamp": "2025-08-24T18:05:00Z",
-      "decision": "Módulo scraper_newspaper3k foi gerado com sucesso.",
-      "author": "Gemini"
+      "timestamp": "2025-08-28T13:35:00Z",
+      "decision": "Usuário concluiu que a ausência de dados no 'Feed de Ataques' é devido ao baixo volume de dados. A lógica de depuração foi revertida e o módulo de Analytics foi marcado como concluído.",
+      "author": "Humano"
     }
   ]
 }
