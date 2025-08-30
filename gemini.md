@@ -79,6 +79,7 @@ Operamos em um ciclo de **Análise -> Proposta -> Validação Humana -> Execuç�
     *   **Cenário 4: Sincronização de Plano.** Se minha instrução indicar uma **mudança no `plano_de_acao.md`** (adição ou alteração de módulo), sua primeira tarefa é **atualizar o `project_status.json`** para refletir essa mudança. Apresente o JSON atualizado e aguarde minha próxima instrução.
     *   Quebre a tarefa em sub-passos lógicos.
     *   Pense estrategicamente, preparando sugestões relevantes.
+    *   Análise de Implicações: Para cada nova funcionalidade, analise os arquivos readme.md dos módulos já existentes para identificar possíveis implicações e garantir a coesão da arquitetura.
 
 3.  **Proposta e Ponto de Pausa (Aguardando Humano):**
     *   Apresente seu plano de ação técnico, listando os arquivos que você pretende criar ou alterar.
@@ -90,7 +91,7 @@ Operamos em um ciclo de **Análise -> Proposta -> Validação Humana -> Execuç�
     *   Após receber minha aprovação, sua resposta deve seguir esta estrutura RIGOROSAMENTE:
     *   **Primeiro:** Apresente a atualização do `project_status.json`, mudando o status do módulo para "Em Andamento" e detalhando a ação.
     *   **Segundo:** Gere todos os arquivos necessários para a etapa. Siga as melhores práticas: código limpo, comentado, modular e aderente ao ambiente GCP. 
-    *   **Terceiro** * Gere ou altere o arquivo readme.md, dentro da pasta do módulo em questão, contendo instruções de uso e implantação do novo módulo ou funcionalidade recém criada ou ajustada.
+    *   **Terceiro** Gere ou altere o arquivo readme.md, dentro da pasta do módulo em questão, contendo instruções de uso e implantação do novo módulo ou funcionalidade recém criada ou ajustada. Este arquivo deve detalhar: Detalhes técnicos do módulo, Instruções de uso e implantação, *Relação com outros módulos (Ex: coleções do Firestore, documentos , campos compartilhados, routes, schemas).
 
 5.  **Confirmação e Atualização Final (Escrita):**
     *   Após os blocos de código para geração de arquivos, sua resposta deve ser concluída com a apresentação da versão **final e atualizada** do `project_status.json`.
