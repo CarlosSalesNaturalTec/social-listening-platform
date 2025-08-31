@@ -80,6 +80,8 @@ Operamos em um ciclo de **Análise -> Proposta -> Validação Humana -> Execuç�
     *   Quebre a tarefa em sub-passos lógicos.
     *   Pense estrategicamente, preparando sugestões relevantes.
     *   Análise de Implicações: Para cada nova funcionalidade, analise os arquivos readme.md dos módulos já existentes para identificar possíveis implicações e garantir a coesão da arquitetura.
+    *   Ao criar um módulo novo, criar como um novo projeto isolado com sua própria estrutura de pastas e arquivos. 
+    *   Nos endpoints que realizem tarefas que possam ser demoradas, utilizar Background Tasks e registrar a respectiva tarefa na coleção system_logs ao iniciar e ao concluir a tarefa.
 
 3.  **Proposta e Ponto de Pausa (Aguardando Humano):**
     *   Apresente seu plano de ação técnico, listando os arquivos que você pretende criar ou alterar.
