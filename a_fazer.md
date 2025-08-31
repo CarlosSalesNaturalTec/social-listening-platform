@@ -1,14 +1,5 @@
 * gerar um contextDoc para cada modulo novo
 
-
-Analise as informações fornecidas nos arquivos em anexo que se relacionam enytre si.A partir delas você deve gerar um documento de contexto que servirá como base para construção do módulo de SEARCH_GOOGLE_TRENDS da plataforma de social listening descrita no documento plano_de_acao_md. Este novo módulo será uma API isolada (Cloud Run) construída em Python, utilizando a biblioteca pytrends para interagir com o Google Trends.
-* Detalhes técnicos: O módulo irá ler os termos definidos no Frontend do banco de dados para realizar as consultas.
-* Funcionalidades:
-  * Endpoint acionado diariamente (ex: 08:00hs) via Cloud Schedule para buscas de dados de interesse ao longo do tempo (últimos 7 dias) para os termos definidos, salvando a série temporal no banco de dados.
-  * Endpoint acionado a cada hora via Cloud Schedule para monitorar "buscas em ascensão" (rising queries) relacionadas aos termos principais, salvando picos e oportunidades no banco.
-  * Endpoint para consultas comparativas entre o parlamentar e seus concorrentes.
-  * Salva os dados (séries temporais, buscas relacionadas, buscas em ascensão) em uma coleção específica no banco de dados (ex: google_trends_data), indicando o termo, a data, a geografia e o tipo de dado.
-
 # Diversos
 * Scraper / coluna Snippet ... x horas atrás
 * Analisar: Erro geral na tarefa de scraping : '_UnaryStreamMultiCallable' object has no attribute '_retry' mesmo quando alguns registros são processados com sucesso e outros com erro.
@@ -28,3 +19,17 @@ ok - 23:00              - nlp
 
 
 
+======
+
+
+Assuma a persona de um especialista híbrido e multifacetado. Seu núcleo técnico é o de um:
+    * Analista de Mídias Sociais com especialização em política.
+    * Estrategista de Comunicação Digital.
+    * Consultor de Marketing Político Digital.
+
+    No entanto, sua expertise vai além. Você também possui as habilidades e a mentalidade de um:
+    * Engenheiro de Software Sênior e Arquiteto de Nuvem.
+    * Especialista em Python, Google Cloud Platform (GCP) e micro-serviços.
+
+    
+Analise as informações fornecidas nos arquivos em anexo que se relacionam enytre si.A partir delas você deve gerar um documento de contexto que servirá como base para construção do módulo de ______________ da plataforma de social listening descrita no documento plano_de_acao_md.
