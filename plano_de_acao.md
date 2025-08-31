@@ -26,7 +26,7 @@ Objetivo : Construir uma Plataforma de Social Listening capaz de realizar monito
 
 
 * - **SEARCH_GOOGLE_TRENDS** 
-Implementar módulo conforme descrito no documento de contexto: contextDoc_SearchGoogleTrends.md.
+Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_SearchGoogleTrends.md.
 
 * - **Scraper newspaper3k** 
   * - Etapa já construída. Disponível na pasta : /scraper_newspaper3k.
@@ -51,34 +51,34 @@ Implementar módulo conforme descrito no documento de contexto: contextDoc_Searc
     * - Salvar análises em banco de dados e atualiza o respectivo status: nlp_ok ou nlp_erro.
 
 * - **ANALYTICS** 
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_analytics.md.
+  * - Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_analytics.md.
         
 * - **SEARCH_INSTAGRAM** 
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_instagram.md
+  * - Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_instagram.md
   
 * - **SEARCH_YOUTUBE** 
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_youtube.md
+  * - Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_youtube.md
   
 * - **SEARCH_FACEBOOK** 
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_facebook.md.
+  * - Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_facebook.md.
   
 * - **WHATSAPP_GROUPS** 
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_whatsapp.md
+  * - Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_whatsapp.md
  
 * - **AGENT MODE**
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_agentMode.md 
+  * - Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_agentMode.md 
 
 * - **SEMANTIC** 
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_semantic.md
+  * - Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_semantic.md
 
 * - **SEARCH_TWITER** 
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_twitter.md
+  * - Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_twitter.md
 
 * - **SEARCH_TIKTOK** 
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_tiktok.md
+  * - Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_tiktok.md
 
 * - **SEARCH_KWAII** 
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_kwaii.md
+  * - Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_kwaii.md
 
 * - **SEARCH_LINKEDIN** 
-  * - Implementar módulo conforme descrito no documento de contexto: contextDoc_linkedin.md
+  * - Implementar módulo conforme descrito no documento de contexto: /contextDocs/contextDoc_linkedin.md
