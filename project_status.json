@@ -1,8 +1,8 @@
 {
   "projectName": "Plataforma de Social Listening Político",
   "overallStatus": "Em Andamento",
-  "lastUpdated": "2025-08-29T14:25:00Z",
-  "currentFocus": "Revertendo código para um commit anterior estável devido a erros introduzidos pela funcionalidade 'Feed de Ataques'. Aguardando a estabilização para refazer o processo.",
+  "lastUpdated": "2025-08-30T18:55:00Z",
+  "currentFocus": "Removendo módulos de documentação (*_readme) do project_status.json para alinhamento com o plano_de_acao.md.",
   "humanConfirmationRequired": {
     "status": false,
     "question": ""
@@ -13,9 +13,19 @@
       "detailedStatus": "Etapa inicial já construída conforme plano de ação.",
       "notes": ""
     },
+    "frontend_trends_terms": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": "Cadastro de termos-chave para o módulo SEARCH_GOOGLE_TRENDS."
+    },
     "search_google_cse": {
       "status": "Concluído",
       "detailedStatus": "Etapa inicial já construída conforme plano de ação.",
+      "notes": ""
+    },
+    "search_google_trends": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
       "notes": ""
     },
     "scraper_newspaper3k": {
@@ -29,9 +39,9 @@
       "notes": ""
     },
     "analytics": {
-      "status": "Concluído",
-      "detailedStatus": "Implementação dos dashboards e feeds finalizada. A lógica foi validada.",
-      "notes": "A ausência de dados no 'Feed de Ataques' é considerada normal devido ao baixo volume de dados monitorados até o momento. A funcionalidade deve operar como esperado quando dados relevantes estiverem presentes."
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": "Status revertido para 'Não Iniciado' devido à reversão do código-fonte para uma versão anterior."
     },
     "search_instagram": {
       "status": "Não Iniciado",
@@ -49,6 +59,16 @@
       "notes": ""
     },
     "whatsapp_groups": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
+    },
+    "agent_mode": {
+      "status": "Não Iniciado",
+      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "notes": ""
+    },
+    "semantic": {
       "status": "Não Iniciado",
       "detailedStatus": "Aguardando início do desenvolvimento.",
       "notes": ""
@@ -72,32 +92,17 @@
       "status": "Não Iniciado",
       "detailedStatus": "Aguardando início do desenvolvimento.",
       "notes": ""
-    },
-    "agent_mode": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
-    },
-    "semantic": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
     }
   },
   "decisionLog": [
     {
-      "timestamp": "2025-08-28T13:30:00Z",
-      "decision": "Aprovada a modificação temporária na lógica do 'Feed de Ataques' para depuração, alterando o operador de 'and' para 'or'.",
-      "author": "Humano"
+      "timestamp": "2025-08-30T18:50:00Z",
+      "decision": "Arquivo README.md da api_nlp gerado e salvo com sucesso.",
+      "author": "AI"
     },
     {
-      "timestamp": "2025-08-28T13:35:00Z",
-      "decision": "Usuário concluiu que a ausência de dados no 'Feed de Ataques' é devido ao baixo volume de dados. A lógica de depuração foi revertida e o módulo de Analytics foi marcado como concluído.",
-      "author": "Humano"
-    },   
-    {
-      "timestamp": "2025-08-29T14:25:00Z",
-      "decision": "Código revertido para um commit anterior mais estável devido a múltiplos erros introduzidos após a implementação da funcionalidade 'Feed de Ataques'.",
+      "timestamp": "2025-08-30T18:55:00Z",
+      "decision": "Removidos os módulos de acompanhamento de documentação (*_readme) do project_status.json.",
       "author": "Humano"
     }
   ]

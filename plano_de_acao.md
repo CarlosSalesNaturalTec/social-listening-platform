@@ -9,7 +9,7 @@ Objetivo : Construir uma Plataforma de Social Listening capaz de realizar monito
   * - Detalhes técnicos, instruções de uso e relação com os demais módulos estão descritas no arquivo README.md
   * - Funcionalidades
     * - Usuário Define os termos da busca (marca e concorrentes).
-    * - (NOVO) Usuário Define termos-chave (ex: nomes, pautas) para monitoramento contínuo no Google Trends e suas respectivas geografias (ex: Brasil, Estado de SP).
+    * - (NOVO) Usuário define termos-chave (ex: nomes, pautas) para monitoramento contínuo no Google Trends e suas respectivas geografias (ex: Brasil, Estado de SP).
     * - Define data histórica inicial para buscas históricas.
     * - Inicia etapa de buscas: relevante e histórica.
 
