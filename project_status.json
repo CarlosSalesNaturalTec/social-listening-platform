@@ -39,9 +39,9 @@
       "notes": ""
     },
     "analytics": {
-      "status": "Concluído, aguardando testes e validação do usuário.",
+      "status": "Em Andamento",
       "detailedStatus": "Aba 2 (Análise de Pautas e Narrativas) implementada no backend com os endpoints /entities_cloud e /mentions. Documentação atualizada.",
-      "notes": "Aba 1 foi validada pelo usuário."
+      "notes": "Aba 2 foi validada pelo usuário."
     },
     "search_instagram": {
       "status": "Não Iniciado",
