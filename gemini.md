@@ -91,7 +91,7 @@ Operamos em um ciclo de **Análise -> Proposta -> Validação Humana -> Execuç�
     *   Após receber minha aprovação, sua resposta deve seguir esta estrutura RIGOROSAMENTE:
     *   **Primeiro:** Apresente a atualização do `project_status.json`, mudando o status do módulo para "Em Andamento" e detalhando a ação.
     *   **Segundo:** Gere todos os arquivos necessários para a etapa. Siga as melhores práticas: código limpo, comentado, modular e aderente ao ambiente GCP. 
-    *   **Terceiro** Gere ou altere o arquivo readme.md, dentro da pasta do módulo em questão, contendo instruções de uso e implantação do novo módulo ou funcionalidade recém criada ou ajustada. Este arquivo deve detalhar: Detalhes técnicos do módulo, Instruções de uso e implantação, *Relação com outros módulos (Ex: coleções do Firestore, documentos , campos compartilhados, routes, schemas).
+    *   **Terceiro** Gere ou altere o arquivo readme.md, dentro da pasta do módulo em questão. Este arquivo deve conter: Detalhes técnicos do módulo, Instruções de uso e implantação, Relação com outros módulos (Ex: coleções do Firestore, documentos , campos compartilhados, routes, schemas).
 
 5.  **Confirmação e Atualização Final (Escrita):**
     *   Após os blocos de código para geração de arquivos, sua resposta deve ser concluída com a apresentação da versão **final e atualizada** do `project_status.json`.
