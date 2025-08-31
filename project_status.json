@@ -1,8 +1,8 @@
 {
   "projectName": "Plataforma de Social Listening Político",
   "overallStatus": "Em Andamento",
-  "lastUpdated": "2025-08-31T16:05:00Z",
-  "currentFocus": "Aguardando validação da Aba 1 (Dashboard Principal) do módulo Analytics.",
+  "lastUpdated": "2025-08-31T16:15:00Z",
+  "currentFocus": "Aguardando validação da Aba 2 (Análise de Pautas e Narrativas) do módulo Analytics.",
   "humanConfirmationRequired": {
     "status": false,
     "question": ""
@@ -40,8 +40,8 @@
     },
     "analytics": {
       "status": "Concluído, aguardando testes e validação do usuário.",
-      "detailedStatus": "Aba 1 (Dashboard Principal) implementada no backend com os endpoints /combined_view e /kpis. Arquivos recriados do zero.",
-      "notes": "O código backend anterior foi descartado. A documentação foi atualizada."
+      "detailedStatus": "Aba 2 (Análise de Pautas e Narrativas) implementada no backend com os endpoints /entities_cloud e /mentions. Documentação atualizada.",
+      "notes": "Aba 1 foi validada pelo usuário."
     },
     "search_instagram": {
       "status": "Não Iniciado",
@@ -96,18 +96,13 @@
   },
   "decisionLog": [
     {
-      "timestamp": "2025-08-31T15:35:00Z",
-      "decision": "Módulo search_google_trends foi validado e marcado como 'Concluído'.",
+      "timestamp": "2025-08-31T16:08:00Z",
+      "decision": "Validação da Aba 1 do Analytics bem-sucedida. Aprovado o avanço para a Aba 2.",
       "author": "Humano"
     },
     {
-      "timestamp": "2025-08-31T16:00:00Z",
-      "decision": "Aprovada a recriação total do módulo de Analytics, começando pela Aba 1 (Dashboard Principal), e a padronização do parâmetro para 'search_group'.",
-      "author": "Humano"
-    },
-    {
-      "timestamp": "2025-08-31T16:05:00Z",
-      "decision": "Implementada a Aba 1 (Dashboard Principal) do módulo Analytics no backend, com endpoints para correlação de dados e KPIs.",
+      "timestamp": "2025-08-31T16:15:00Z",
+      "decision": "Implementada a Aba 2 (Análise de Pautas e Narrativas) do módulo Analytics no backend, com endpoints para nuvem de entidades e tabela de menções.",
       "author": "AI"
     }
   ]
