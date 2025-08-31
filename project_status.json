@@ -1,8 +1,8 @@
 {
   "projectName": "Plataforma de Social Listening Político",
   "overallStatus": "Em Andamento",
-  "lastUpdated": "2025-08-30T18:55:00Z",
-  "currentFocus": "Removendo módulos de documentação (*_readme) do project_status.json para alinhamento com o plano_de_acao.md.",
+  "lastUpdated": "2025-08-31T15:11:00Z",
+  "currentFocus": "Aguardando validação da correção do erro 400 da API do Google Trends.",
   "humanConfirmationRequired": {
     "status": false,
     "question": ""
@@ -14,9 +14,9 @@
       "notes": ""
     },
     "frontend_trends_terms": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": "Cadastro de termos-chave para o módulo SEARCH_GOOGLE_TRENDS."
+      "status": "Concluído",
+      "detailedStatus": "Interface de usuário para CRUD de termos do Google Trends foi criada e integrada.",
+      "notes": ""
     },
     "search_google_cse": {
       "status": "Concluído",
@@ -24,14 +24,14 @@
       "notes": ""
     },
     "search_google_trends": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
+      "status": "Correção Aplicada, aguardando testes e validação do usuário.",
+      "detailedStatus": "Corrigido o erro 400 Bad Request ao usar um timeframe com formato de data explícito (YYYY-MM-DD YYYY-MM-DD).",
+      "notes": "O serviço deve estar funcional. Recomenda-se reiniciar e testar os endpoints."
     },
     "scraper_newspaper3k": {
       "status": "Concluído",
-      "detailedStatus": "Etapa inicial já construída conforme plano de ação.",
-      "notes": ""
+      "detailedStatus": "Correção do bug '_UnaryStreamMultiCallable' aplicada com sucesso.",
+      "notes": "A versão da biblioteca google-cloud-firestore foi fixada em 2.11.0."
     },
     "nlp": {
       "status": "Concluído",
@@ -96,14 +96,19 @@
   },
   "decisionLog": [
     {
-      "timestamp": "2025-08-30T18:50:00Z",
-      "decision": "Arquivo README.md da api_nlp gerado e salvo com sucesso.",
+      "timestamp": "2025-08-31T15:06:00Z",
+      "decision": "Corrigido o bug de status code inválido (HTTP_2_ACCEPTED) no módulo search_google_trends.",
       "author": "AI"
     },
     {
-      "timestamp": "2025-08-30T18:55:00Z",
-      "decision": "Removidos os módulos de acompanhamento de documentação (*_readme) do project_status.json.",
+      "timestamp": "2025-08-31T15:10:00Z",
+      "decision": "Aprovada a correção do erro 400 Bad Request da API do Google Trends.",
       "author": "Humano"
+    },
+    {
+      "timestamp": "2025-08-31T15:11:00Z",
+      "decision": "Corrigido o erro 400 Bad Request no módulo search_google_trends, utilizando um formato de data explícito para o timeframe.",
+      "author": "AI"
     }
   ]
 }
