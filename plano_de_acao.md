@@ -1,6 +1,6 @@
 # PLANO DE AÇÃO
 
-Objetivo : Construir uma Plataforma de Social Listening capaz de realizar monitoramento de redes sociais e análise de dados de forma automática. As fontes a serem pesquisadas são: Web em geral utilizando Google CSE, Google Trends, Youtube, Instagran, Facebook, Mensagens de Grupos do Whatsapp, Tik tok, Kwaii, Linkedin e Twitter. A plataforma deve possuir um frontend no qual o usuário poderá: definir os parâmetros do sistema, iniciar o processo de coleta de dados, acompanhar o andamento destas coletas , realizar as respectivas análises de social listening, e autorizar a publicação automática em redes sociais de conteúdo gerado pelo sistema. Para cada uma das fontes a serem pesquisadas e scrapeadas deverá ser construída uma respectiva API isolada. O processo de construção desta plataforma deve ser feito em etapas com a utilização do gemini cli e moderadoração de um humano. O plano de ação geral e o estado de construção da plataforma deve ser armazenado em arquivo json a ser consultado pelo gemini cli durante a criação do código, permitindo que o processo seja continuado mesmo após interrupções. Ambiente de produção: GCP, Cloud Run, Firebase, Storage/Buckets, Cloud Schedules. Ambiente de desenvolvimento Windows. O processo de coleta será inicializado pelo usuário, a partir daí a plataforma deve ser capaz de funcionar de forma automática, realizando coletas e análises diárias inicializadas por chamadas do cloud schedules. Deve ser considerado o código existente como ponto de partida. Utilizar o mesmo banco de dados criado no módulo de search_google_cse nos demais módulos, compartilhando as suas coleções.
+Objetivo : Construir uma Plataforma de Social Listening capaz de realizar monitoramento de redes sociais e análise de dados de forma automática. As fontes a serem pesquisadas são: Web em geral utilizando Google CSE, Google Trends, Youtube, Instagran, Facebook, Mensagens de Grupos do Whatsapp, Tik tok, Kwaii, Linkedin e Twitter. A plataforma deve possuir um frontend no qual o usuário poderá: definir os parâmetros do sistema, iniciar o processo de coleta de dados, acompanhar o andamento destas coletas , realizar as respectivas análises de social listening, e gerenciar o AGENT MODE. Para cada uma das fontes a serem pesquisadas e scrapeadas deverá ser construída uma respectiva API isolada. O processo de construção desta plataforma deve ser feito em etapas com a utilização do gemini cli e moderadoração de um humano. O plano de ação geral e o estado de construção da plataforma deve ser armazenado em arquivo json a ser consultado pelo gemini cli durante a criação do código, permitindo que o processo seja continuado mesmo após interrupções. Ambiente de produção: GCP, Cloud Run, Firebase, Storage/Buckets, Cloud Schedules. Ambiente de desenvolvimento Windows. O processo de coleta será inicializado pelo usuário, a partir daí a plataforma deve ser capaz de funcionar de forma automática, realizando coletas e análises diárias inicializadas por chamadas do cloud schedules. Deve ser considerado o código existente como ponto de partida. Utilizar o mesmo banco de dados criado no módulo de search_google_cse nos demais módulos, compartilhando as suas coleções.
 
 # Módulos/Etapas da plataforma:
 
@@ -26,13 +26,7 @@ Objetivo : Construir uma Plataforma de Social Listening capaz de realizar monito
 
 
 * - **SEARCH_GOOGLE_TRENDS** 
-* Este novo módulo será uma API isolada (Cloud Run) construída em Python, utilizando a biblioteca pytrends para interagir com o Google Trends.
-* Detalhes técnicos: O módulo irá ler os termos definidos no Frontend do banco de dados para realizar as consultas.
-* Funcionalidades:
-  * Endpoint acionado diariamente (ex: 08:00hs) via Cloud Schedule para buscas de dados de interesse ao longo do tempo (últimos 7 dias) para os termos definidos, salvando a série temporal no banco de dados.
-  * Endpoint acionado a cada hora via Cloud Schedule para monitorar "buscas em ascensão" (rising queries) relacionadas aos termos principais, salvando picos e oportunidades no banco.
-  * Endpoint para consultas comparativas entre o parlamentar e seus concorrentes.
-  * Salva os dados (séries temporais, buscas relacionadas, buscas em ascensão) em uma coleção específica no banco de dados (ex: google_trends_data), indicando o termo, a data, a geografia e o tipo de dado.
+Implementar módulo conforme descrito no documento de contexto: contextDoc_SearchGoogleTrends.md.
 
 * - **Scraper newspaper3k** 
   * - Etapa já construída. Disponível na pasta : /scraper_newspaper3k.
