@@ -1,8 +1,8 @@
 {
   "projectName": "Plataforma de Social Listening Político",
   "overallStatus": "Em Andamento",
-  "lastUpdated": "2025-09-01T18:50:00Z",
-  "currentFocus": "Aguardando a próxima instrução para seguir com o plano de ação.",
+  "lastUpdated": "2025-09-01T19:10:00Z",
+  "currentFocus": "Correção de bug no módulo frontend.",
   "humanConfirmationRequired": {
     "status": false,
     "question": ""
@@ -10,8 +10,8 @@
   "modules": {
     "frontend": {
       "status": "Concluído",
-      "detailedStatus": "Implementado limite de 100 resultados na busca por status na página do Scraper.",
-      "notes": "Ajustes de layout e correções de bugs na página do Scraper foram concluídos e validados."
+      "detailedStatus": "Correção do erro de build 'Module not found' no analyticsService.ts. Refatorado para usar a instância global do apiClient com interceptor de autenticação.",
+      "notes": "Aguardando testes e validação do usuário."
     },
     "backend": {
       "status": "Concluído",
@@ -101,13 +101,13 @@
   },
   "decisionLog": [
     {
-      "timestamp": "2025-09-01T18:40:00Z",
-      "decision": "Correção de bug finalizada: Adição do campo 'error_message' ao schema Pydantic UnifiedMonitorResult.",
+      "timestamp": "2025-09-01T18:50:00Z",
+      "decision": "Implementação do limite de 100 resultados na busca por status, afetando frontend e backend.",
       "author": "AI"
     },
     {
-      "timestamp": "2025-09-01T18:50:00Z",
-      "decision": "Implementação do limite de 100 resultados na busca por status, afetando frontend e backend.",
+      "timestamp": "2025-09-01T19:10:00Z",
+      "decision": "Correção de bug no frontend: Refatorado analyticsService.ts para usar o apiClient global, resolvendo o erro de build 'Module not found'.",
       "author": "AI"
     }
   ]
