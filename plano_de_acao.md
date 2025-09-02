@@ -56,7 +56,7 @@
 
 *   **SEARCH_INSTAGRAM**
     *   **ESCOPO DEFINIDO:** Módulo focado exclusivamente na **coleta de dados** do Instagram. Sua responsabilidade é popular o Firestore com dados brutos, que serão posteriormente consumidos por outros serviços, como o `api_nlp`.
-    *   Implementar módulo conforme descrito no documento de contexto: `/contextDocs/contextDoc_instagram.md`.
+    *   Implementar módulo conforme descrito no documento de contexto: `/contextDoc_instagram.md`.
     *   Endpoint acionado diariamente às 23:30hs via Cloud Schedule.
     *   Funcionalidades
         *   Coleta de posts, comentários e stories de perfis e hashtags monitoradas.

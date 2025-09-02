@@ -1,7 +1,7 @@
 {
   "projectName": "Plataforma de Social Listening Político",
   "overallStatus": "Em Andamento",
-  "lastUpdated": "2025-09-02T14:05:00Z",
+  "lastUpdated": "2025-09-02T14:15:00Z",
   "currentFocus": "Implementação dos serviços core do módulo 'search_instagram'.",
   "humanConfirmationRequired": {
     "status": false,
@@ -49,9 +49,9 @@
       "notes": "O valor inicial do filtro foi ajustado de 'default' para 'brand' para carregar os dados corretamente."
     },
     "search_instagram": {
-      "status": "Em Andamento",
-      "detailedStatus": "Etapa 1 concluída. Estrutura de pastas e arquivos do projeto criada. Próximo passo: implementar os serviços de integração com GCP.",
-      "notes": "A base do micro-serviço está pronta para o desenvolvimento da lógica de negócio."
+      "status": "Concluído",
+      "detailedStatus": "Serviços de integração (Firestore, GCS, Secret Manager) e o serviço de orquestração (InstagramService) foram criados.",
+      "notes": "A estrutura base do serviço está pronta. Próximos passos envolvem a implementação do cliente de API real do Instagram e a criação do endpoint FastAPI."
     },
     "search_youtube": {
       "status": "Não Iniciado",
@@ -113,6 +113,11 @@
     {
       "timestamp": "2025-09-02T14:05:00Z",
       "decision": "Estrutura de arquivos e diretórios para o micro-serviço 'search_instagram' criada com sucesso.",
+      "author": "AI"
+    },
+    {
+      "timestamp": "2025-09-02T14:15:00Z",
+      "decision": "Criação dos serviços de integração (Firestore, GCS, Secret Manager) e do serviço orquestrador (InstagramService) para o módulo 'search_instagram'.",
       "author": "AI"
     }
   ]
