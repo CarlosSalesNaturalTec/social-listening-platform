@@ -1,8 +1,8 @@
 {
   "projectName": "Plataforma de Social Listening Político",
   "overallStatus": "Em Andamento",
-  "lastUpdated": "2025-09-01T19:10:00Z",
-  "currentFocus": "Correção de bug no módulo frontend.",
+  "lastUpdated": "2025-09-02T14:05:00Z",
+  "currentFocus": "Implementação dos serviços core do módulo 'search_instagram'.",
   "humanConfirmationRequired": {
     "status": false,
     "question": ""
@@ -49,9 +49,9 @@
       "notes": "O valor inicial do filtro foi ajustado de 'default' para 'brand' para carregar os dados corretamente."
     },
     "search_instagram": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
+      "status": "Em Andamento",
+      "detailedStatus": "Etapa 1 concluída. Estrutura de pastas e arquivos do projeto criada. Próximo passo: implementar os serviços de integração com GCP.",
+      "notes": "A base do micro-serviço está pronta para o desenvolvimento da lógica de negócio."
     },
     "search_youtube": {
       "status": "Não Iniciado",
@@ -101,13 +101,18 @@
   },
   "decisionLog": [
     {
-      "timestamp": "2025-09-01T18:50:00Z",
-      "decision": "Implementação do limite de 100 resultados na busca por status, afetando frontend e backend.",
+      "timestamp": "2025-09-01T19:10:00Z",
+      "decision": "Correção de bug no frontend: Refatorado analyticsService.ts para usar o apiClient global, resolvendo o erro de build 'Module not found'.",
       "author": "AI"
     },
     {
-      "timestamp": "2025-09-01T19:10:00Z",
-      "decision": "Correção de bug no frontend: Refatorado analyticsService.ts para usar o apiClient global, resolvendo o erro de build 'Module not found'.",
+      "timestamp": "2025-09-02T14:00:00Z",
+      "decision": "Início do desenvolvimento do módulo 'search_instagram'. Foco inicial na criação da estrutura do backend.",
+      "author": "AI"
+    },
+    {
+      "timestamp": "2025-09-02T14:05:00Z",
+      "decision": "Estrutura de arquivos e diretórios para o micro-serviço 'search_instagram' criada com sucesso.",
       "author": "AI"
     }
   ]
