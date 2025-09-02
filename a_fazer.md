@@ -16,3 +16,4 @@ ok - 12:00hs e 20:00hs  - search
 ok - 21:00hs            - historical_search
 ok - 22:00hs            - scraper
 ok - 23:00              - nlp
+23:30 - instagram jobs
