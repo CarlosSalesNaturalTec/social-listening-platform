@@ -1,12 +1,23 @@
 Instagram Dashboard
 ========================
 
+Nota: O "Mapa de Influência dos Comentaristas" é um gráfico mais complexo que exige dados que não foram contemplados nos endpoints atuais (número de seguidores de quem comenta). Vou deixar este gráfico
+específico com dados de exemplo por enquanto e adicionar um "TODO" para indicar que ele precisa de um endpoint dedicado no futuro.
+
 
 Nota: A "Nuvem de Palavras Comparativa" requer a busca de termos para múltiplos perfis. O endpoint `top-terms-24h` que criei busca termos de forma geral. Para implementar esta feature corretamente, seria
   necessário um novo endpoint ou modificar o existente para aceitar um nome de perfil. Por enquanto, vou focar nos outros três gráficos e deixar a nuvem de palavras com dados de exemplo, marcando-a com um "TODO".
 
  Nota: O "Feed da Hashtag" é um componente visual complexo. Vou deixar um placeholder por enquanto e focar em conectar os dados nos outros dois componentes. O endpoint `getTopicInfluencers` retorna engajamento,
   mas não o número de seguidores; vou omitir essa coluna na tabela por enquanto para refletir os dados que a API realmente fornece.
+
+
+
+melhorar esta lógica de PROFILE_USERNAME . colocar em variáveis de ambiente ou coisa parecida
+// TODO: O perfil do usuário deve vir de um contexto ou seletor na UI
+const PROFILE_USERNAME = "nome_parlamentar"; 
+
+
 
 
 SCRAPER
