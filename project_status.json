@@ -1,123 +1,56 @@
 {
   "projectName": "Plataforma de Social Listening Político",
   "overallStatus": "Em Andamento",
-  "lastUpdated": "2025-09-02T14:15:00Z",
-  "currentFocus": "Implementação dos serviços core do módulo 'search_instagram'.",
+  "lastUpdated": "2025-09-03T00:00:00Z",
+  "currentFocus": "Aguardando validação para iniciar o desenvolvimento do Dashboard do Instagram.",
   "humanConfirmationRequired": {
-    "status": false,
-    "question": ""
+    "status": true,
+    "question": "O componente 'Switch' foi adicionado e o erro de compilação resolvido. A interface para Gerenciamento de Alvos do Instagram está concluída. Podemos agora prosseguir para o desenvolvimento do Dashboard do Instagram (item 6.3)?"
   },
   "modules": {
-    "frontend": {
+    "frontend": { 
+      "status": "Concluído", 
+      "detailedStatus": "Componente 'Switch' adicionado e erro de compilação resolvido." 
+    },
+    "backend": { "status": "Concluído" },
+    "frontend_trends_terms": { "status": "Concluído" },
+    "search_google_cse": { "status": "Concluído" },
+    "search_google_trends": { "status": "Concluído" },
+    "scraper_newspaper3k": { "status": "Concluído" },
+    "nlp": { "status": "Concluído" },
+    "analytics": { "status": "Concluído" },
+    "search_instagram": { "status": "Concluído" },
+    "frontend_instagram": { "status": "Concluído" },
+    "backend_instagram_targets": { "status": "Concluído" },
+    "frontend_instagram_targets": {
       "status": "Concluído",
-      "detailedStatus": "Correção do erro de build 'Module not found' no analyticsService.ts. Refatorado para usar a instância global do apiClient com interceptor de autenticação.",
-      "notes": "Aguardando testes e validação do usuário."
-    },
-    "backend": {
-      "status": "Concluído",
-      "detailedStatus": "Endpoint /monitor/results-by-status agora aceita um parâmetro 'limit'.",
-      "notes": "O bug da mensagem de erro foi totalmente resolvido."
-    },
-    "frontend_trends_terms": {
-      "status": "Concluído",
-      "detailedStatus": "Interface de usuário para CRUD de termos do Google Trends foi criada e integrada.",
+      "detailedStatus": "Página de UI com abas, tabelas e diálogos para CRUD de perfis e hashtags foi criada e validada após correção de bugs.",
       "notes": ""
     },
-    "search_google_cse": {
-      "status": "Concluído",
-      "detailedStatus": "Etapa inicial já construída conforme plano de ação.",
-      "notes": ""
-    },
-    "search_google_trends": {
-      "status": "Concluído",
-      "detailedStatus": "Módulo validado e finalizado pelo usuário após implementação de batching.",
-      "notes": "O serviço está estável e funcional."
-    },
-    "scraper_newspaper3k": {
-      "status": "Concluído",
-      "detailedStatus": "Correção do bug '_UnaryStreamMultiCallable' aplicada com sucesso.",
-      "notes": "A versão da biblioteca google-cloud-firestore foi fixada em 2.11.0."
-    },
-    "nlp": {
-      "status": "Concluído",
-      "detailedStatus": "Etapa inicial já construída conforme plano de ação.",
-      "notes": ""
-    },
-    "analytics": {
-      "status": "Concluído",
-      "detailedStatus": "Frontend do módulo Analytics foi validado pelo usuário. A integração com o backend está funcionando e os gráficos refletem os dados corretamente.",
-      "notes": "O valor inicial do filtro foi ajustado de 'default' para 'brand' para carregar os dados corretamente."
-    },
-    "search_instagram": {
-      "status": "Concluído",
-      "detailedStatus": "Serviços de integração (Firestore, GCS, Secret Manager) e o serviço de orquestração (InstagramService) foram criados.",
-      "notes": "A estrutura base do serviço está pronta. Próximos passos envolvem a implementação do cliente de API real do Instagram e a criação do endpoint FastAPI."
-    },
-    "search_youtube": {
+    "dashboard_instagram": { 
       "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
+      "detailedStatus": "Aguardando validação para iniciar o desenvolvimento.",
       "notes": ""
     },
-    "search_facebook": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
-    },
-    "whatsapp_groups": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
-    },
-    "agent_mode": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
-    },
-    "semantic": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
-    },
-    "search_twitter": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
-    },
-    "search_tiktok": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
-    },
-    "search_kwaii": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
-    },
-    "search_linkedin": {
-      "status": "Não Iniciado",
-      "detailedStatus": "Aguardando início do desenvolvimento.",
-      "notes": ""
-    }
+    "search_youtube": { "status": "Não Iniciado" },
+    "search_facebook": { "status": "Não Iniciado" },
+    "whatsapp_groups": { "status": "Não Iniciado" },
+    "agent_mode": { "status": "Não Iniciado" },
+    "semantic": { "status": "Não Iniciado" },
+    "search_twitter": { "status": "Não Iniciado" },
+    "search_tiktok": { "status": "Não Iniciado" },
+    "search_kwaii": { "status": "Não Iniciado" },
+    "search_linkedin": { "status": "Não Iniciado" }
   },
   "decisionLog": [
     {
-      "timestamp": "2025-09-01T19:10:00Z",
-      "decision": "Correção de bug no frontend: Refatorado analyticsService.ts para usar o apiClient global, resolvendo o erro de build 'Module not found'.",
+      "timestamp": "2025-09-02T23:55:00Z",
+      "decision": "Iniciando a adição do componente 'Switch' ao frontend para corrigir erro de compilação.",
       "author": "AI"
     },
     {
-      "timestamp": "2025-09-02T14:00:00Z",
-      "decision": "Início do desenvolvimento do módulo 'search_instagram'. Foco inicial na criação da estrutura do backend.",
-      "author": "AI"
-    },
-    {
-      "timestamp": "2025-09-02T14:05:00Z",
-      "decision": "Estrutura de arquivos e diretórios para o micro-serviço 'search_instagram' criada com sucesso.",
-      "author": "AI"
-    },
-    {
-      "timestamp": "2025-09-02T14:15:00Z",
-      "decision": "Criação dos serviços de integração (Firestore, GCS, Secret Manager) e do serviço orquestrador (InstagramService) para o módulo 'search_instagram'.",
+      "timestamp": "2025-09-03T00:00:00Z",
+      "decision": "Componente 'Switch' do shadcn/ui adicionado com sucesso ao frontend, resolvendo o erro de compilação.",
       "author": "AI"
     }
   ]
