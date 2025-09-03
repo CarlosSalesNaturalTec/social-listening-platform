@@ -1,8 +1,19 @@
+SCRAPER
+
+   "ERROR:main:Erro inesperado no documento 9bd6cefe64a526bbc2c4773b7211f8ed7d23138263c8eab732274b47a342ccad: All strings must be XML compatible: Unicode or ASCII, no NULL bytes or control characters
+
+
+"WARNING:main:Erro no scraping do documento b0d01ebd8f0013bc0cc455262099b65230638260acc384b6d73386f2789afb57: Article `download()` failed with 504 Server Error: Gateway Time-out for url: https://www.camara.leg.br/noticias/1155870-camara-aprova-projeto-que-amplia-numero-de-deputados-federais-de-513-para-531/ on URL https://www.camara.leg.br/noticias/1155870-camara-aprova-projeto-que-amplia-numero-de-deputados-federais-de-513-para-531/"
+
+=====
+
+
 Recebi o log de erro. A mensagem 403 Permission 'secretmanager.versions.add' denied é extremamente clara e aponta para um problema de configuração no Google Cloud, e não um bug no nosso código.
 
   1. Estado Atual e Verificação de Recuperação
 
-  O estado atual do projeto é que estamos prontos para desenvolver a UI de gerenciamento de alvos, mas a funcionalidade de criação de contas de serviço   está bloqueada por uma permissão de nuvem.
+  O estado atual do projeto é que estamos prontos para desenvolver a UI de gerenciamento de alvos, mas a funcionalidade de criação de contas de serviço
+  está bloqueada por uma permissão de nuvem.
 
   2. Análise e Planejamento
 
