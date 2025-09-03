@@ -1,18 +1,20 @@
 {
   "projectName": "Plataforma de Social Listening Político",
   "overallStatus": "Em Andamento",
-  "lastUpdated": "2025-09-03T00:55:00Z",
-  "currentFocus": "Aguardando validação final do Dashboard do Instagram completo.",
+  "lastUpdated": "2025-09-03T02:25:00Z",
+  "currentFocus": "Aguardando criação de índices no Firestore pelo usuário para validação final do Dashboard.",
   "humanConfirmationRequired": {
     "status": true,
-    "question": "O Dashboard do Instagram foi totalmente implementado com todas as quatro abas, utilizando dados de exemplo. O trabalho neste módulo está concluído. Podemos prosseguir para o próximo módulo do plano de ação?"
+    "question": "Uma correção final de robustez foi aplicada ao backend para garantir que não haja mais erros 500. Por favor, reinicie o backend, crie os índices do Firestore e confirme se o dashboard carrega sem erros (mesmo que vazio)."
   },
   "modules": {
     "frontend": {
       "status": "Concluído"
     },
     "backend": {
-      "status": "Concluído"
+      "status": "Em Correção",
+      "detailedStatus": "Aplicada correção final de robustez nos endpoints do 'Radar de Pautas' para garantir que não ocorram erros 500.",
+      "notes": "O funcionamento completo depende da criação de índices no Firestore pelo usuário."
     },
     "frontend_trends_terms": {
       "status": "Concluído"
@@ -45,9 +47,7 @@
       "status": "Concluído"
     },
     "dashboard_instagram": {
-      "status": "Concluído",
-      "detailedStatus": "Todas as quatro abas ('Pulso do Dia', 'Análise de Desempenho', 'Inteligência Competitiva', 'Radar de Pautas') foram implementadas com sucesso.",
-      "notes": "Utilizados dados mocados para a visualização inicial. O módulo aguarda a validação final do usuário."
+      "status": "Concluído"
     },
     "search_youtube": {
       "status": "Não Iniciado"
@@ -79,18 +79,13 @@
   },
   "decisionLog": [
     {
-      "timestamp": "2025-09-03T00:45:00Z",
-      "decision": "Aba 'Inteligência Competitiva' do Dashboard do Instagram foi implementada com sucesso.",
+      "timestamp": "2025-09-03T02:20:00Z",
+      "decision": "Implementada lógica de tratamento de erros no backend para retornar respostas vazias em caso de índices ausentes no Firestore.",
       "author": "AI"
     },
     {
-      "timestamp": "2025-09-03T00:50:00Z",
-      "decision": "Aba 'Inteligência Competitiva' validada. Prosseguindo com a aba 'Radar de Pautas'.",
-      "author": "Humano"
-    },
-    {
-      "timestamp": "2025-09-03T00:55:00Z",
-      "decision": "Aba 'Radar de Pautas' implementada, concluindo o desenvolvimento inicial do Dashboard do Instagram.",
+      "timestamp": "2025-09-03T02:25:00Z",
+      "decision": "Aplicada correção de robustez final nos endpoints do 'Radar de Pautas' para capturar todas as exceções e evitar erros 500.",
       "author": "AI"
     }
   ]

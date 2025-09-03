@@ -1,5 +1,16 @@
-SCRAPER
+Instagram Dashboard
+========================
 
+
+Nota: A "Nuvem de Palavras Comparativa" requer a busca de termos para múltiplos perfis. O endpoint `top-terms-24h` que criei busca termos de forma geral. Para implementar esta feature corretamente, seria
+  necessário um novo endpoint ou modificar o existente para aceitar um nome de perfil. Por enquanto, vou focar nos outros três gráficos e deixar a nuvem de palavras com dados de exemplo, marcando-a com um "TODO".
+
+ Nota: O "Feed da Hashtag" é um componente visual complexo. Vou deixar um placeholder por enquanto e focar em conectar os dados nos outros dois componentes. O endpoint `getTopicInfluencers` retorna engajamento,
+  mas não o número de seguidores; vou omitir essa coluna na tabela por enquanto para refletir os dados que a API realmente fornece.
+
+
+SCRAPER
+===================
    "ERROR:main:Erro inesperado no documento 9bd6cefe64a526bbc2c4773b7211f8ed7d23138263c8eab732274b47a342ccad: All strings must be XML compatible: Unicode or ASCII, no NULL bytes or control characters
 
 
