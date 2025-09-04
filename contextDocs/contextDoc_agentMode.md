@@ -11,4 +11,12 @@ Se (busca_em_ascensao para 'pauta_relevante' == 'BREAKOUT') -> sugerir_post_opor
     * - tikTok stories e feed
     * - Reels no youtube
 
+
+
+    **4. Agentes:**
+* Utilizar open-wa/wa-automate https://github.com/open-wa/wa-automate-nodejs 
+* cadastro de números whatsapp para receber alertas de crise, etc (nome, número, grupo)
+* Enviar alertas para contas pre-definidas
+* Enviar mensagens personalizadas contendo texto e midias para contas especificas 
+
     

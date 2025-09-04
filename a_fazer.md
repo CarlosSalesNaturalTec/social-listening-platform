@@ -1,3 +1,18 @@
+plano de ação:
+=======================
+alterar ordem: WHATSAPP_GROUPS, AGENT_MODE
+criar MEDIA_ANALYSIS
+
+NLP
+===================
+tipo de entidade, adicionar esta informação na api_nlp é possível?
+
+"relevant_entities": [
+    {"text": "Deputado Sicrano", "type": "PERSON"},
+    {"text": "Campinas", "type": "LOCATION"}
+  ],
+
+
 Instagram Dashboard
 ========================
 
