@@ -64,17 +64,23 @@
         *   Upload de mídias (imagens/vídeos) para o Google Cloud Storage.
         *   **Os dados de texto coletados (legendas e comentários) serão processados de forma assíncrona pelo módulo `api_nlp`.**
 
+*   **WHATSAPP_GROUPS**
+    *   Implementar módulo conforme descrito no documento de contexto: `/contextDocs/contextDoc_whatsapp.md`
+
+*   **API_NLP PARA WHATSAPP_GROUPS**
+    *   Implementar nova funcionalidade no módulo `api_nlp` conforme descrito no documento de contexto: `contextDoc_api_nlp`
+
+*   **AGENT_MODE**
+    *   Implementar módulo conforme descrito no documento de contexto: `/contextDocs/contextDoc_agentMode.md`
+
+*   **MEDIA_ANALYSIS**
+    *   Implementar módulo conforme descrito no documento de contexto: `/contextDocs/contextDoc_media_analysis.md`
+
 *   **SEARCH_YOUTUBE**
     *   Implementar módulo conforme descrito no documento de contexto: `/contextDocs/contextDoc_youtube.md`
 
 *   **SEARCH_FACEBOOK**
     *   Implementar módulo conforme descrito no documento de contexto: `/contextDocs/contextDoc_facebook.md`.
-
-*   **WHATSAPP_GROUPS**
-    *   Implementar módulo conforme descrito no documento de contexto: `/contextDocs/contextDoc_whatsapp.md`
-
-*   **AGENT_MODE**
-    *   Implementar módulo conforme descrito no documento de contexto: `/contextDocs/contextDoc_agentMode.md`
 
 *   **SEMANTIC**
     *   Implementar módulo conforme descrito no documento de contexto: `/contextDocs/contextDoc_semantic.md`

@@ -1,8 +1,8 @@
 {
   "projectName": "Plataforma de Social Listening Político",
   "overallStatus": "Em Andamento",
-  "lastUpdated": "2025-09-04T13:05:00Z",
-  "currentFocus": "Aguardando validação do módulo whatsapp_ingestion_service.",
+  "lastUpdated": "2025-09-05T13:20:00.000Z",
+  "currentFocus": "Aguardando validação das alterações no módulo api_nlp.",
   "humanConfirmationRequired": {
     "status": false,
     "question": ""
@@ -53,6 +53,11 @@
       "status": "Concluído, aguardando testes e validação do usuário.",
       "detailedStatus": "Todos os arquivos para o micro-serviço de ingestão de dados do WhatsApp foram gerados.",
       "notes": "O próximo passo é a integração com o frontend para permitir o upload dos arquivos."
+    },
+    "api_nlp_para_whatsapp_groups": {
+      "status": "Concluído, aguardando testes e validação do usuário.",
+      "detailedStatus": "Endpoint /process/whatsapp-message e lógica de processamento assíncrono foram implementados.",
+      "notes": "O próximo passo é criar a Cloud Function que servirá de gatilho."
     },
     "agent_mode": {
       "status": "Não Iniciado"
@@ -106,6 +111,21 @@
     {
       "timestamp": "2025-09-04T13:05:00Z",
       "decision": "Geração de todos os arquivos do backend para o módulo whatsapp_groups concluída.",
+      "author": "AI"
+    },
+    {
+      "timestamp": "2025-09-05T12:23:16.597Z",
+      "decision": "Sincronizado o project_status.json com o plano_de_acao.md, adicionando o módulo API_NLP PARA WHATSAPP_GROUPS.",
+      "author": "AI"
+    },
+    {
+      "timestamp": "2025-09-05T13:10:00.000Z",
+      "decision": "Aprovado o plano para expandir o módulo api_nlp para processar mensagens do WhatsApp.",
+      "author": "Humano"
+    },
+    {
+      "timestamp": "2025-09-05T13:20:00.000Z",
+      "decision": "Implementado o endpoint /process/whatsapp-message no módulo api_nlp para análise assíncrona de mensagens individuais.",
       "author": "AI"
     }
   ]
