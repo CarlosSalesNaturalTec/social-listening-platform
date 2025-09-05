@@ -1,5 +1,10 @@
 # AGENT_MODE
-* - Alertas de crise e outros via WhatsApp utilizando @open-wa/wa-automate.
+* Utilizar open-wa/wa-automate https://github.com/open-wa/wa-automate-nodejs 
+* No frontend imolementar cadastro de números whatsapp para receber alertas de crise, etc (nome, número, grupo)
+
+* Enviar alertas para contas pre-definidas
+* Enviar mensagens personalizadas contendo texto e midias para contas especificas 
+
 
 * - Este módulo deverá ter um sistema de gatilhos (triggers) que monitora a base de dados. Deverá ser configurado para reagir não apenas a dados das redes sociais, mas também aos dados do Google Trends. Exemplos de gatilhos:
 Se (interesse_busca_trends para 'termo_negativo' > 80) E (sentimento_geral < -0.5) -> acionar_protocolo_crise()
@@ -11,12 +16,5 @@ Se (busca_em_ascensao para 'pauta_relevante' == 'BREAKOUT') -> sugerir_post_opor
     * - tikTok stories e feed
     * - Reels no youtube
 
-
-
-    **4. Agentes:**
-* Utilizar open-wa/wa-automate https://github.com/open-wa/wa-automate-nodejs 
-* cadastro de números whatsapp para receber alertas de crise, etc (nome, número, grupo)
-* Enviar alertas para contas pre-definidas
-* Enviar mensagens personalizadas contendo texto e midias para contas especificas 
 
     

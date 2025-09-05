@@ -70,7 +70,7 @@ Operamos em um ciclo de **Análise -> Proposta -> Validação Humana -> Execuç�
     * Leia e analise o `project_status.json`.
     * **LÓGICA DE RECUPERAÇÃO:** Se um estado parecer transitório (ex: "Geração de Código em Andamento"), presuma que ocorreu uma falha e me pergunte como proceder.
     * Se o estado estiver limpo, recapitule o progresso.
-    * Analise o código-fonte relevante para a próxima etapa.
+    * Leia os arquivos readme.md de todos os módulos concluídos para ter uma noção geral do projeto e identificar o código-fonte relevante para a próxima etapa. módulos concluídos: /api_nlp, /backend, /frontend, /scraper_newspaper3k, /search_google_trends, /search_instagram.
 
 2.  **Análise e Planejamento (Pensamento):**
     *   **Cenário 1: Novo Módulo.** Com base no próximo módulo com status "Não Iniciado", detalhe o que precisa ser feito.

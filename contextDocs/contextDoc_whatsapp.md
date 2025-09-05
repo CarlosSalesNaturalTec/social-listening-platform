@@ -139,3 +139,98 @@ O dashboard no `FRONTEND` será a interface onde o valor estratégico deste mód
 4.  **Painel de Alertas:**
     *   **O que é:** Cards que destacam anomalias detectadas, como um aumento súbito de mensagens com sentimento negativo, a menção a um termo de crise, ou a rápida disseminação de uma mesma imagem (mesmo `media_hash`) em múltiplos grupos.
     *   **Inteligência Gerada:** Fornece o gatilho para a ativação do `AGENT_MODE`, permitindo uma resposta cirúrgica e proativa a crises em gestação.
+
+---
+
+### **Detalhamento do Item 4: Dashboard de Análise de Grupos do WhatsApp**
+
+Este dashboard será alimentado por um conjunto de endpoints no micro-serviço `ANALYTICS`, que por sua vez realizará as agregações necessárias a partir dos dados no Firestore. A premissa é que o usuário possa filtrar por um ou mais grupos (`group_id`) e por um intervalo de tempo.
+
+#### **1. Radar de Narrativas**
+
+*   **Objetivo Estratégico:** Entender "sobre o que estão falando *agora*?" de forma rápida e visual. Identificar os temas dominantes, os nomes mais citados e as pautas emergentes que a equipe de comunicação deve monitorar ou engajar.
+
+*   **Artefato Visual:**
+    *   **Tipo de Gráfico:** Nuvem de Palavras Interativa (Interactive Word Cloud). As palavras não são apenas texto; são clicáveis. Clicar em uma palavra (ex: "Reforma Tributária") poderia filtrar os outros gráficos do dashboard para exibir dados apenas de mensagens que contêm essa entidade.
+    *   **Biblioteca Sugerida:** **D3.js** (especificamente o módulo `d3-cloud`) para máxima customização e interatividade.
+
+*   **Fonte de Dados e Lógica de Agregação:**
+    *   **Coleção:** `whatsapp_groups/{group_id}/messages`
+    *   **Filtros:** O endpoint no `ANALYTICS` deve buscar documentos onde `nlp_status == 'nlp_ok'` e dentro do intervalo de tempo selecionado.
+    *   **Campos Utilizados:** O campo-chave é o `entities` (que foi adicionado pelo `api_nlp`). Este é um array de objetos, ex: `[{ "text": "Deputado Sicrano", "type": "PESSOA" }, ...]`.
+    *   **Lógica de Agregação:** O backend deverá:
+        1.  Iterar sobre todos os documentos de mensagens que correspondem aos filtros.
+        2.  Para cada mensagem, iterar sobre seu array `entities`.
+        3.  Criar um dicionário ou mapa para contar a frequência de cada `entity.text`. É recomendável normalizar o texto (ex: tudo minúsculo) para agrupar variações.
+        4.  O endpoint retornará uma lista de objetos, ex: `[{ "text": "reforma tributária", "value": 150 }, { "text": "deputado sicrano", "value": 125 }, ...]`.
+        5.  No frontend, o `value` será usado para definir o tamanho da palavra na nuvem.
+
+---
+
+#### **2. Termômetro de Sentimento**
+
+*   **Objetivo Estratégico:** Medir a "temperatura" emocional da base. Correlacionar picos de sentimento (positivo ou negativo) com eventos externos (um discurso, uma notícia, uma ação política) para entender causa e efeito em tempo real.
+
+*   **Artefato Visual:**
+    *   **Tipo de Gráfico:** Gráfico de Linhas Combinado com Gráfico de Barras (Combo Chart).
+        *   **Eixo Y1 (Linha):** Score Médio de Sentimento (de -1 a 1).
+        *   **Eixo Y2 (Barras):** Volume Total de Mensagens.
+        *   **Eixo X:** Tempo (agrupado por hora ou dia, dependendo do intervalo selecionado).
+    *   **Biblioteca Sugerida:** **ECharts** ou **Chart.js**, que lidam muito bem com gráficos combinados e têm excelente performance.
+
+*   **Fonte de Dados e Lógica de Agregação:**
+    *   **Coleção:** `whatsapp_groups/{group_id}/messages`
+    *   **Filtros:** `nlp_status == 'nlp_ok'`, intervalo de tempo. Ignorar mensagens onde `is_system_message == true`.
+    *   **Campos Utilizados:** `timestamp_utc` e `sentiment.score` (adicionado pelo `api_nlp`).
+    *   **Lógica de Agregação:** O backend fará uma agregação temporal (GROUP BY):
+        1.  Agrupar os documentos por intervalo de tempo (ex: por dia).
+        2.  Para cada dia, calcular duas métricas:
+            *   A média do campo `sentiment.score` de todas as mensagens daquele dia.
+            *   A contagem total de mensagens (`COUNT(*)`) daquele dia.
+        3.  O endpoint retornará uma série temporal, ex: `[{ "date": "2025-09-04", "avg_sentiment": 0.35, "message_count": 450 }, { "date": "2025-09-05", "avg_sentiment": -0.12, "message_count": 620 }, ...]`.
+
+---
+
+#### **3. Mapa de Influência Interna**
+
+*   **Objetivo Estratégico:** Identificar quem são os formadores de opinião e os "hubs" de informação dentro de cada grupo. Mapear quem fala com quem permite entender a estrutura social da comunidade e direcionar a comunicação para os membros-chave.
+
+*   **Artefato Visual:**
+    *   **Tipo de Gráfico:** Grafo de Rede Direcionado (Directed Network Graph).
+        *   **Nós (Círculos):** Representam os `autores` (membros do grupo). O tamanho do nó pode ser proporcional ao número de mensagens que o autor enviou.
+        *   **Arestas (Linhas/Setas):** Representam as interações. Uma seta sai do `autor` de uma mensagem e aponta para o membro mencionado no campo `mentions`. A espessura da linha pode representar a frequência de menções entre esses dois membros.
+    *   **Biblioteca Sugerida:** **vis.js** ou **D3.js (com d3-force)** são as ferramentas padrão para visualizações de rede complexas e interativas.
+
+*   **Fonte de Dados e Lógica de Agregação:**
+    *   **Coleção:** `whatsapp_groups/{group_id}/messages`
+    *   **Filtros:** Intervalo de tempo. Filtrar por mensagens que tenham o campo `mentions` preenchido e não vazio.
+    *   **Campos Utilizados:** `author`, `mentions`.
+    *   **Lógica de Agregação:** O backend construirá a estrutura de dados do grafo:
+        1.  **Criar lista de nós:** Obter todos os `autores` únicos no período e contar suas mensagens para definir o "peso" (tamanho) de cada nó.
+        2.  **Criar lista de arestas:** Iterar sobre as mensagens. Para cada mensagem com menções, criar uma aresta do `autor` para cada pessoa no array `mentions`. Contar a frequência de cada par `(autor, mencionado)` para definir o peso da aresta.
+        3.  O endpoint retornará a estrutura do grafo, ex: `{"nodes": [{ "id": "Autor A", "value": 80 }, ...], "edges": [{ "from": "Autor A", "to": "Autor B", "value": 15 }, ...]}`.
+
+---
+
+#### **4. Painel de Alertas (AGENT_MODE Triggers)**
+
+*   **Objetivo Estratégico:** Deixar de ser reativo e passar a ser proativo. Este painel não é para análise histórica, mas para detecção de anomalias em tempo real que exigem atenção imediata da equipe.
+
+*   **Artefato Visual:**
+    *   **Tipo de Gráfico/Artefato:** Uma série de "Cards" de Indicadores Chave (KPI Cards) com cores condicionais (verde, amarelo, vermelho).
+    *   **Biblioteca Sugerida:** Não é uma biblioteca de gráficos, mas um componente de UI de bibliotecas como **Material-UI (MUI)**, **Ant Design** ou **Bootstrap**.
+
+*   **Fonte de Dados e Lógica de Agregação:**
+    Cada card será alimentado por um endpoint específico no `ANALYTICS` que executa uma query de verificação de anomalia.
+
+    *   **Card 1: Alerta de Sentimento Negativo**
+        *   **Lógica:** Contar o número de mensagens com `sentiment.label == 'Negativo'` na última hora. Se o número ultrapassar um limiar pré-definido (ex: 50 mensagens ou 3 desvios padrão acima da média horária), o card fica vermelho.
+        *   **Campos:** `timestamp_utc`, `sentiment.label`.
+
+    *   **Card 2: Alerta de Viralização de Mídia**
+        *   **Lógica:** Identificar se um mesmo `media.hash_sha256` apareceu em mais de X grupos diferentes (ex: 3 grupos) nos últimos 30 minutos. Isso indica uma campanha de disseminação coordenada.
+        *   **Campos:** `media.hash_sha256`, `timestamp_utc`. (Requer uma query que abranja múltiplos `group_id`).
+
+    *   **Card 3: Alerta de Termo de Crise**
+        *   **Lógica:** Manter uma lista de "termos de crise" (ex: "escândalo", "denúncia", "problema grave"). Contar quantas mensagens nos últimos 15 minutos contêm uma entidade (`entities.text`) que corresponde a um desses termos. Se ultrapassar um limiar, o card fica vermelho.
+        *   **Campos:** `entities.text`, `timestamp_utc`.

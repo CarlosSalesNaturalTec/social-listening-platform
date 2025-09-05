@@ -1,10 +1,7 @@
-plano de ação:
-=======================
-alterar ordem: WHATSAPP_GROUPS, AGENT_MODE
-criar MEDIA_ANALYSIS
-
-NLP
+NLP whatsapp
 ===================
+* Disparado a partir de OnUpdate / OnCreate (firestore Events)
+
 tipo de entidade, adicionar esta informação na api_nlp é possível?
 
 "relevant_entities": [
@@ -13,20 +10,20 @@ tipo de entidade, adicionar esta informação na api_nlp é possível?
   ],
 
 
+Criar CLoud Function para realizar requisizões OnCreate / OnUpdate / Firestore / Storage
+
+
+Cloud Functions
+================
+Scraper, NLP * Disparado a partir de OnUpdate / OnCreate (firestore Events)
+
+
 Instagram Dashboard
 ========================
 
 melhorar esta lógica de PROFILE_USERNAME . colocar em variáveis de ambiente ou coisa parecida
 // TODO: O perfil do usuário deve vir de um contexto ou seletor na UI
 const PROFILE_USERNAME = "nome_parlamentar"; 
-
-
-SCRAPER
-===================
-   "ERROR:main:Erro inesperado no documento 9bd6cefe64a526bbc2c4773b7211f8ed7d23138263c8eab732274b47a342ccad: All strings must be XML compatible: Unicode or ASCII, no NULL bytes or control characters
-
-
-"WARNING:main:Erro no scraping do documento b0d01ebd8f0013bc0cc455262099b65230638260acc384b6d73386f2789afb57: Article `download()` failed with 504 Server Error: Gateway Time-out for url: https://www.camara.leg.br/noticias/1155870-camara-aprova-projeto-que-amplia-numero-de-deputados-federais-de-513-para-531/ on URL https://www.camara.leg.br/noticias/1155870-camara-aprova-projeto-que-amplia-numero-de-deputados-federais-de-513-para-531/"
 
 =====
 
