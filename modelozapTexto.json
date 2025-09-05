@@ -1,0 +1,12 @@
+{
+  "timestamp_utc": {
+    "_seconds": 1756888620,
+    "_nanoseconds": 0
+  },
+  "author": "Daniel Quadros SERIN Governadoria",
+  "message_text": "Estou na SESAB, apresentação da ferramenta de monitoramento do Zabbix.",
+  "nlp_status": "pending",
+  "is_system_message": false,
+  "has_media": false,
+  "media_analysis_status": "not_applicable"
+}

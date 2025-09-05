@@ -1,7 +1,24 @@
 # AGENT_MODE
-* Utilizar open-wa/wa-automate https://github.com/open-wa/wa-automate-nodejs 
+
+Módulo responsável por enviar mensagens para usuários pre-cadastrados. MEnsagens serão enviadas nas seguintes situações :
+
+
+* Notificações do Sistema: system logs
+* Enviar Mensagem para grupo (texto, midias)
+
+Se não conseguir: Envia por email
+
+
+
 * No frontend imolementar cadastro de números whatsapp para receber alertas de crise, etc (nome, número, grupo)
 
+
+Módulo a ser acionado nas seguintes situações:
+
+
+
+
+* Utilizar open-wa/wa-automate https://github.com/open-wa/wa-automate-nodejs 
 * Enviar alertas para contas pre-definidas
 * Enviar mensagens personalizadas contendo texto e midias para contas especificas 
 
@@ -12,9 +29,5 @@ Se (busca_em_ascensao para 'pauta_relevante' == 'BREAKOUT') -> sugerir_post_opor
 
 * - publicações semi-automáticas, com moderação humana, em resposta a determinados cenários de crise, ou seguindo tendências da web, nas seguintes redes sociais:
     * - Instagram stories e feed
-    * - Status do Whatsapp
     * - tikTok stories e feed
     * - Reels no youtube
-
-
-    

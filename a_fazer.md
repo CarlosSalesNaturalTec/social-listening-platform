@@ -1,7 +1,5 @@
 NLP whatsapp
 ===================
-* Disparado a partir de OnUpdate / OnCreate (firestore Events)
-
 tipo de entidade, adicionar esta informação na api_nlp é possível?
 
 "relevant_entities": [
@@ -9,8 +7,6 @@ tipo de entidade, adicionar esta informação na api_nlp é possível?
     {"text": "Campinas", "type": "LOCATION"}
   ],
 
-
-Criar CLoud Function para realizar requisizões OnCreate / OnUpdate / Firestore / Storage
 
 
 Cloud Functions

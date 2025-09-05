@@ -1,0 +1,18 @@
+{
+  "timestamp_utc": {
+    "_seconds": 1756811280,
+    "_nanoseconds": 0
+  },
+  "author": "Daniel Quadros SERIN Governadoria",
+  "media": {
+    "media_type": "image/jpeg",
+    "hash_sha256": "93f797ffbdc113ad21020409ed2076b384d96eeadd9c86683b0490e2187cca2a",
+    "original_filename": "IMG-20250902-WA0021.jpg",
+    "gcs_uri": "gs://monitora-parlamentar-elmar-whatsapp-media/93f797ffbdc113ad21020409ed2076b384d96eeadd9c86683b0490e2187cca2a.jpg"
+  },
+  "message_text": "‎IMG-20250902-WA0021.jpg (arquivo anexado)",
+  "nlp_status": "pending",
+  "is_system_message": false,
+  "has_media": true,
+  "media_analysis_status": "pending"
+}
