@@ -88,8 +88,39 @@ Recebi o log de erro. A mensagem 403 Permission 'secretmanager.versions.add' den
 * Analisar, remover e evitar deprecad além de warnings de build/deploy
 
 # Schedule
-ok - 12:00hs e 20:00hs  - search
-ok - 21:00hs            - historical_search
-ok - 22:00hs            - scraper
+ok - 12:00hs e 20:00hs  - google cse continuos
+ok - 21:00hs            - google cse historical
+ok - 22:00hs            - scraper Google
 ok - 23:00              - nlp
 23:30 - instagram jobs
+
+
+
+========
+
+* - google cse. continuos and historical search - ok*
+* - Google Trends search                        - ok*
+
+* - scraper web pages                           
+   * sites de noticias e blogs (newspaper3k)    - ok* 
+
+* - scraper instagram                           - ok* 
+* - scraper WhatsApp Groups                     - ok* 
+* - scraper youtube
+* - scraper facebook
+
+* - nlp                                         - ok*
+* - media analysis (videos, audios, ocr)
+* - sugestor de publicações com perfil: publicitário / analista político
+
+* - Agent Mode:
+      * System logs (Adms)
+      * Alertas de crises (Adms) 
+      * Sugestões de publicação (Adms e colaboradores)
+
+* - Frontend
+   * Cadastros gerais (Adms) 
+      * Usuários do sistema
+      * Termos de buscas e perfils de redes sociais da Marca e Concorrentes
+   * Dashboards (Adms)
+   * Sugestões de publicações (Adms e Colaboradores)
